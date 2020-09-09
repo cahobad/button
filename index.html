@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Красную кнопку не нажимать!</title>
+    <meta name="description" content="Красная кнопка, которую нельзя нажимать">
+
+    <meta property="og:title" content="Пожалуйста, не нажимайте на красную кнопку!">
+    <meta property="og:image" content="https://button.sirikitty.ru/images/red-button.jpg">
+    <meta property="og:image:alt" content="Красная кнопка">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
+    <meta property="og:description" content="Красная кнопка, которую нельзя нажимать">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #d3d3d3;
+            text-align: left;
+            background-color: rgb(0, 0, 0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .heading {
+            margin: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        @media (min-width: 300px) {
+            .heading {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (min-width: 300px) {
+            .button-block {
+                margin: 0 auto;
+                width: 300px;
+
+                position: relative;
+            }
+        }
+
+        .button-block__stand {
+            display: none;
+        }
+
+        @media (min-width: 300px) {
+            .button-block__stand {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 40px;
+                background-color: #ccc;
+                border-top: 1px solid wheat;
+            }
+        }
+
+
+
+
+        .button-block__stand--top {
+            display: none;
+        }
+
+        @media (min-width: 300px) {
+            .button-block__stand--top {
+                display: block;
+                position: absolute;
+                bottom: 40px;
+                left: 0;
+                right: 0;
+                border-bottom: 80px solid #ccc;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                height: 0;
+            }
+        }
+
+
+
+        .button-block__btn-stand {
+            display: none;
+        }
+
+        @media (min-width: 300px) {
+            .button-block__btn-stand {
+                display: block;
+                position: absolute;
+                bottom: 60px;
+                left: 75px;
+                width: 150px;
+                height: 80px;
+                background: rgb(199, 3, 3);
+                -moz-border-radius: 100px / 50px;
+                -webkit-border-radius: 100px / 50px;
+                border-radius: 100px / 50px;
+            }
+        }
+
+
+        .button-block__btn-border {
+            display: none;
+        }
+
+        @media (min-width: 300px) {
+            .button-block__btn-border {
+                display: block;
+                position: absolute;
+                bottom: 90px;
+                left: 75px;
+                width: 150px;
+                height: 80px;
+                border-bottom: 1px solid rgb(199, 3, 3);
+                -moz-border-radius: 100px / 50px;
+                -webkit-border-radius: 100px / 50px;
+                border-radius: 100px / 50px;
+                z-index: 9;
+                pointer-events: none;
+            }
+
+            .button-block__btn-border--press {
+                bottom: 80px;
+            }
+        }
+
+
+        .button-block__red-button {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            font-size: 1px;
+            color: red;
+            background: red;
+            outline: none;
+            border: none;
+            border-radius: 100px;
+        }
+
+        @media (min-width: 300px) {
+            .button-block__red-button {
+                display: block;
+                position: absolute;
+                bottom: 70px;
+                margin: 0;
+                left: 75px;
+                width: 150px;
+                height: 90px;
+                -moz-border-radius: 100px / 50px;
+                -webkit-border-radius: 100px / 50px;
+                border-radius: 100px / 50px;
+            }
+
+            .button-block__red-button:active {
+                height: 80px;
+            }
+        }
+
+
+        .button-block__red-button:hover,
+        .button-block__red-button:focus {
+            cursor: pointer;
+            background: red;
+        }
+
+
+        .crack-image {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .crack-image--add {
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 800px) {
+            .crack-image--add {
+                margin: 10rem auto 0 auto;
+            }
+
+
+        }
+
+        .non-visible {
+            display: none;
+        }
+    </style>
+
+</head>
+
+
+<body class="body">
+    <div>
+        <div class="heading__block">
+            <h1 class="heading">Пожалуйста, не нажимайте на красную кнопку!</h1>
+        </div>
+
+        <img src="/images/crack1.png" alt="трещина на экране" class="crack-image non-visible">
+        <div class="non-visible">
+            <img src="images/crack2.png" alt="Трещина на стекле">
+            <img src="images/crack3.png" alt="Трещина на стекле">
+        </div>
+    </div>
+    <div class="button-block">
+        <div class="button-block__stand--top"></div>
+        <div class="button-block__stand"></div>
+        <div class="button-block__btn-stand"></div>
+        <div class="button-block__btn-border"></div>
+        <button class="button-block__red-button" type="button" role="button">Красная кнопка</button>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+        const button = document.querySelector('.button-block__red-button');
+
+        const borderButton = document.querySelector('.button-block__btn-border');
+
+        const crackImage = document.querySelector('.crack-image');
+
+        const heading = document.querySelector('.heading');
+
+        const headingBlock = document.querySelector('.heading__block');
+
+        const buttonBlock = document.querySelector('.button-block');
+
+        const body = document.querySelector('.body');
+
+        button.onmousedown = () => {
+            borderButton.classList.add('button-block__btn-border--press');
+
+            headingBlock.removeChild(heading);
+
+            crackImage.classList.add('crack-image--add');
+            crackImage.classList.remove('non-visible');
+
+            setTimeout(() => {
+                (crackImage.setAttribute('src', 'images/crack2.png'));
+            }, 750);
+
+            setTimeout(() => {
+                (crackImage.setAttribute('src', 'images/crack3.png'));
+            }, 950);
+
+            setTimeout(() => {
+                (body.removeChild(buttonBlock));
+            }, 2250);
+
+        }
+
+        button.onmouseup = () => {
+            borderButton.classList.remove('button-block__btn-border--press');
+        }
+
+    </script>
+
+</body>
+
+</html>

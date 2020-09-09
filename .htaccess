@@ -1,0 +1,15 @@
+
+
+
+# catch errors
+ErrorDocument 404 /404.html
+
+
+<FilesMatch ".(jpg|png|ico|js|gif)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+RewriteEngine on
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [QSA,R=301,L]
+
